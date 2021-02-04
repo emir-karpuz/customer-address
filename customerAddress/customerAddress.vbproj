@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6133C010-290E-4674-A716-108D4970D240}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>customerAddress.My.MyApplication</StartupObject>
+    <RootNamespace>customerAddress</RootNamespace>
+    <AssemblyName>customerAddress</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>customerAddress.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>customerAddress.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\008-check.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection.vb" />
+    <Compile Include="EducationDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EducationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MouseControls.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SearchMenu.Designer.vb">
+      <DependentUpon>SearchMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchMenu.resx">
+      <DependentUpon>SearchMenu.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="EducationDataSet.xsc">
+      <DependentUpon>EducationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EducationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EducationDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EducationDataSet.xss">
+      <DependentUpon>EducationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001-arrow down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-arrow down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-arrow up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-arrow up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-back arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006-brightness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007-bulleye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\009-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\011-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\012-checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\013-checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\014-checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\015-chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\016-double chevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\017-clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\018-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\019-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\020-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\021-command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\022-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\023-cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\024-dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\025-dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\026-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\027-dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\028-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\029-ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\030-ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\031-ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\032-ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\033-feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\034-filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\035-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\036-floppy disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\037-funnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\038-gauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\039-goal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\040-graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\041-graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\042-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\043-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\044-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\045-heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\046-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\047-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\048-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\049-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\050-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\051-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\052-inside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\053-lifebuoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\054-maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\055-minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\056-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\057-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\058-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\059-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\060-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\061-outside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\062-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\063-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\064-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\065-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\066-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\067-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\068-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\069-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\070-power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\071-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\072-printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\073-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\074-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\075-reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\076-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\077-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\078-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\079-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\080-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\081-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\082-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\083-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\084-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\085-signal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\086-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\087-stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\088-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\089-trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\090-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\091-warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\092-warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\093-waving.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\075-reload.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\089-trash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cool-background.png" />
+    <None Include="Resources\313-search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\028-fast forward.png" />
+    <Content Include="Resources\029-rewind.png" />
+    <Content Include="Resources\034-skip.png" />
+    <Content Include="Resources\035-previous.png" />
+    <Content Include="Resources\154-windows.png" />
+    <Content Include="Resources\325-close.png" />
+    <Content Include="Resources\364-user.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
